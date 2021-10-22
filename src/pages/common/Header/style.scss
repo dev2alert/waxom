@@ -1,0 +1,32 @@
+.main {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    background: #494743;
+    padding: 39px 0px;
+    > :global(.container) {
+        display: flex;
+        justify-content: space-between;
+        width: 1100px;
+        margin: auto;
+    }
+    :global {
+        .logo {
+            display: inline-flex;
+            width: 182px;
+            height: 57px;
+            cursor: pointer;
+            &:hover {
+                * {
+                    fill: #C7B299;
+                }
+            }
+            > * {
+                fill: white;
+            }
+            > text {
+                font: normal 34px "Raleway Regular";
+            }
+        }
+    }
+}
