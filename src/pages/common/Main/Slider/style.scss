@@ -1,5 +1,87 @@
 .main {
-    height: 800px;
+    $section-height: 800px;
+    $view-height: calc($section-height - 40px);
+    height: $section-height;
     background: var(--background-image);
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+    :global {
+        $arrow-width: 41px;
+        .slick-slider {
+            display: flex;
+            height: $view-height;
+            > .arrow {
+                display: flex;
+                background: none;
+                border: none;
+                width: $arrow-width;
+                background-size: $arrow-width;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+                opacity: 0.5;
+                &:hover {
+                    opacity: 1;
+                }
+                &.next {
+                    background-image: url("./assets/arrow-next.png");
+                }
+                &.prev {
+                    background-image: url("./assets/arrow-prev.png"); 
+                }
+            }
+        }
+        .slick-list {
+            width: calc(100% - $arrow-width * 2);
+            .view {
+                display: flex;
+                align-items: center;
+                height: $view-height;
+                > .container {
+                    width: inherit;
+                }
+                &.center {
+                    justify-content: center;
+                    > .container {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            height: 16px;
+            list-style: none;
+            bottom: 0px;
+            > li {
+                display: inline-flex;
+                width: auto;
+                height: auto;
+                margin: 0px;
+                &:not(:first-child) {
+                    margin-left: 9px;
+                }
+                &.slick-active {
+                    > .dot {
+                        $size: 16px;
+                        width: $size;
+                        height: $size;
+                        background: rgba(0, 0, 0, 0.6);
+                        border: 2px solid white;
+                        border-radius: calc($size / 2);
+                    }
+                }
+                > .dot {
+                    $size: 12px;
+                    display: inline-flex;
+                    width: $size;
+                    height: $size;
+                    background: white;
+                    opacity: 0.5;
+                    border-radius: calc($size / 2);
+                }
+            }
+        }
+    }
 }
