@@ -10,6 +10,8 @@ export default function Home(): React.ReactElement {
                 <Subtitle>Unique and Modern Design</Subtitle>
                 <Title>Portfolio PSD Template</Title>
                 <P>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</P>
+                <br />
+                <br />
                 <Button>Get Started</Button>
             </View>
             <View>
