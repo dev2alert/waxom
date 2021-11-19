@@ -51,6 +51,9 @@ export default class Slider extends React.Component<SliderProps> {
                         onClick={this.handlePrev.bind(this)}    
                     />
                 </>}
+                initialSlide={1}
+                autoplay={true}
+                autoplaySpeed={3000}
             >
                 {children}
             </SlickSlider>

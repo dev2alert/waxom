@@ -4,7 +4,7 @@ export interface ButtonProps {
     children: string;
 }
 
-export default function Button({children}: ButtonProps): React.ReactElement {
+export function Button({children}: ButtonProps): React.ReactElement {
     return <button className="button">
         {children}
     </button>;

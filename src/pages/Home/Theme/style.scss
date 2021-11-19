@@ -1,0 +1,9 @@
+.main {
+    background: linear-gradient(90deg, #251D1A, #4E3427);
+    > :global(.container) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 49px 30px;
+    }
+}

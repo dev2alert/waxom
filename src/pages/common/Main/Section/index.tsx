@@ -1,10 +1,10 @@
 import * as React from "react";
 import styles from "./style.scss";
 
-export {SubtitleProps, default as Subtitle} from "./Subtitle";
-export {TitleProps, default as Title} from "./Title";
-export {ParagraphProps, default as Paragraph} from "./P";
-export {ButtonProps, default as Button} from "./Button";
+export * from "./Subtitle";
+export * from "./Title";
+export * from "./P";
+export * from "./Button";
 
 export interface SectionProps {
     container?: boolean;

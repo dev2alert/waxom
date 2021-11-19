@@ -1,0 +1,45 @@
+.main {
+    padding: 79px 0px;
+    background: white;
+    :global {
+        .services {
+            display: flex;
+            align-items: flex-end;
+            column-gap: 30px;
+        }
+        .service {
+            &.active {
+                > .icon {
+                    --color: #C7B299;
+                }
+                > .title {
+                    color: #C7B299;
+                }
+                > .line {
+                    --color: #C7B299;
+                }
+            }
+            > .icon {
+                display: flex;
+                margin: auto;
+                > path {
+                    fill: var(--color, #555555);
+                }
+            }
+            > .title {
+                margin-top: 20px;
+            }
+            > .paragraph {
+                margin-top: 10px;
+            }
+            > .line {
+                display: flex;
+                margin: auto;
+                width: 71px;
+                height: 3px;
+                background: var(--color, #F1EEE9);
+                margin-top: 29px; 
+            }
+        }
+    }
+}
