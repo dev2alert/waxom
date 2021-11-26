@@ -4,6 +4,7 @@
         "jsx": "react",
         "moduleResolution": "Node",
         "strict": true,
-        "module": "es2020"
+        "module": "es2020",
+        "experimentalDecorators": true
     }
 }

@@ -1,0 +1,106 @@
+.main {
+    background: white;
+    padding: 81px 0px;
+    :global {
+        .paragraph {
+            margin-top: 24px !important;
+            margin-bottom: 38px !important;
+        }
+        .projects {
+            margin-bottom: 42px;
+            > .list {
+                $photo-width: 350px;
+                $photo-height: 220px;
+                display: grid;
+                grid-template-columns: repeat(3, $photo-width);
+                justify-content: center;
+                gap: 25px;
+                > .item {
+                    cursor: pointer;
+                    &:hover {
+                        > .photo {
+                            --arrow-color: #362F2D;
+                            > .hover {
+                                display: flex;
+                            }
+                        }
+                        > .bottom {
+                            background: #362F2D;
+                            > .name {
+                                color: white;
+                            }
+                            > .desc {
+                                color: #C7B299;
+                            }
+                        }
+                    }
+                    > .photo {
+                        position: relative;
+                        > .hover {
+                            display: none;
+                            justify-content: center;
+                            align-items: center;
+                            width: $photo-width;
+                            height: $photo-height;
+                            position: absolute;
+                            background: rgba(54, 47, 45, 0.65);
+                            > .buttons > .list {
+                                display: flex;
+                                column-gap: 22px;
+                                > .item {
+                                    display: inline-flex;
+                                    background: none;
+                                    border: none;
+                                    padding: 0px;
+                                    cursor: pointer;
+                                    > .icon {
+                                        * {
+                                            fill: var(--icon-color, white);
+                                        }
+                                    }
+                                    &:hover {
+                                        --icon-color: #C7B299;
+                                    }
+                                }
+                            }
+                        }
+                        > .content {
+                            display: flex;
+                            align-items: center;
+                            height: $photo-height;
+                            overflow: hidden;
+                            > .container {
+                                width: 100%;
+                            }
+                        }
+                        > .arrow {
+                            width: 31px;
+                            height: 11px;
+                            position: absolute;
+                            margin-top: -11px;
+                            margin-left: 15px;
+                            > * {
+                                fill: var(--arrow-color, #FBFAF8);
+                            }
+                        }
+                    }
+                    > .bottom {
+                        background: #FBFAF8;
+                        padding: 24px;
+                        > .name {
+                            margin: 0px;
+                            font: normal 20px "Raleway Medium";
+                            color: #C7B299;
+                        }
+                        > .desc {
+                            margin: 0px;
+                            margin-top: 10px;
+                            font: normal 14px "Montserrat Light";
+                            color: #D1D1D1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

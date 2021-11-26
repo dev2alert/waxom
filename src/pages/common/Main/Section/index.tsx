@@ -5,6 +5,8 @@ export * from "./Subtitle";
 export * from "./Title";
 export * from "./P";
 export * from "./Button";
+export * from "./Tabs";
+export * from "./Flex";
 
 export interface SectionProps {
     container?: boolean;
