@@ -1,0 +1,39 @@
+.main {
+    background: linear-gradient(90deg, #211B19, #4E3427);
+    padding-top: 69px;
+    padding-bottom: 60px;
+    :global {
+        .counters {
+            display: flex;
+            justify-content: space-between;
+            > .counter {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                > .icon {
+                    fill: #C7B299;
+                }
+                > .count {
+                    color: white;
+                    font: normal 48px "Montserrat UltraLight";
+                    margin-top: 24px;
+                }
+                > .name {
+                    font: normal 14px "Roboto Regular";
+                    color: #C7B299;
+                    text-transform: uppercase;
+                    margin-top: 9px;
+                }
+                > .line {
+                    display: inline-flex;
+                    width: 31px;
+                    height: 3px;
+                    background: white;
+                    border-radius: 1.5px;
+                    margin-top: 29px;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

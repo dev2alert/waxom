@@ -3,7 +3,8 @@
     $view-height: calc($section-height - 40px);
     height: $section-height;
     background: var(--background-image);
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(54, 47, 45, 0.65);
     :global {
         $arrow-width: 41px;
         .slick-slider {

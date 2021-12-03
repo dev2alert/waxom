@@ -30,25 +30,30 @@
                     color: #C7B299;
                 }
             }
+            &.type-4 {
+                color: white;
+                font: normal var(--size, 30px) "Raleway Medium";
+            }
         }
         .paragraph {
             margin: 0px;
             width: var(--width);
             &.type-1 {
-                color: #dbdada;
+                color: var(--color, #dbdada);
                 font: normal var(--size, 16px) "Montserrat Light";
                 margin-top: 10px;
                 width: var(--width, 560px);
+                line-height: var(--line, 24px);
             }
             &.type-2 {
-                color: #8C8C8C;
+                color: var(--color, #8C8C8C);
                 font: normal var(--size, 14px) "Montserrat Light";
-                line-height: 24px;
+                line-height: var(--line, 24px);
             }
             &.type-3 {
-                color: #615855;
+                color: var(--color, #615855);
                 font: normal var(--size, 18px) "Montserrat Light";
-                line-height: 32px;
+                line-height: var(--line, 32px);
             }
         }
         .button {
@@ -90,6 +95,28 @@
         }
         .flex {
             display: flex;
+        }
+        ul.list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 11px;
+            list-style: none;
+            padding-left: 46px;
+            margin: 39px 0px;
+            > .item {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                font: normal 16px "Montserrat Light";
+                color: #8C8C8C;
+                &:before {
+                    display: inline-flex;
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 29px;
+                    content: url("./assets/list-arrow.png");
+                }
+            }
         }
     }
 }

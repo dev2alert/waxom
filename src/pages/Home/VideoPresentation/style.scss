@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+    background-size: cover;
+    height: 708px;
+    box-shadow: inset 0px 0px 0px 354px rgba(54, 47, 45, 0.6);
+    :global {
+        .play {
+            $size: 101px;
+            display: inline-flex;
+            width: $size;
+            height: $size;
+            justify-content: center;
+            align-items: center;
+            border-radius: calc($size / 2);
+            background: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            > .icon {
+                width: 71px;
+                height: 71px;
+                fill: white;
+            }
+        }
+        .title {
+            margin-top: 38px;
+        }
+        .paragraph {
+            margin-top: 25px !important;
+        }
+        .time {
+            font: bold 15px "Montserrat Regular";
+            color: #cabba8;
+            margin-top: 40px;
+            letter-spacing: 1px;
+        }
+    }
+}

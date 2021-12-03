@@ -7,6 +7,7 @@ export * from "./P";
 export * from "./Button";
 export * from "./Tabs";
 export * from "./Flex";
+export * from "./List";
 
 export interface SectionProps {
     container?: boolean;
