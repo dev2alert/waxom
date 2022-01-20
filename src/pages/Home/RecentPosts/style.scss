@@ -1,0 +1,160 @@
+.main {
+    padding: 81px 0px;
+    background: white;
+    > :global(.container > .paragraph) {
+        margin-top: 24px !important;
+        margin-bottom: 38px !important;
+    }
+    :global {
+        .post {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            border: 1px solid #ebebeb;
+            position: relative;
+            cursor: pointer;
+            &:hover {
+                .photo {
+                    box-shadow: inset 0px 0px 0px 11110px rgba(54, 47, 45, 0.4);
+                    > .container {
+                        z-index: -1;
+                    }
+                }
+                .date {
+                    > .day {
+                        background: #C7B299;
+                    }
+                    > .month {
+                        background: #A48D72;
+                    }
+                }
+                > .bottom {
+                    background: #362F2D;
+                    > .name {
+                        color: #C7B299;
+                    }
+                }
+                .desc {
+                    color: white;
+                }
+            }
+            .date {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                margin: 18px;
+                width: 50px;
+                border-radius: 4px;
+                overflow: hidden;
+                z-index: 2;
+                > .day {
+                    background: #363636;
+                    font: normal 24px "Montserrat Light";
+                    color: white;
+                    text-align: center;
+                    padding: 5px 0px;
+                }
+                > .month {
+                    background: #252525;
+                    font: normal 12px "Roboto Regular";
+                    color: white;
+                    text-align: center;
+                    padding: 6px 0px;
+                }
+            }
+            .photo {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                width: 348px;
+                height: 221px;
+                overflow: hidden;
+            }
+            .photo-slider {
+                $dot-size: 12px;
+                .slick-dots {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 9px;
+                    height: 16px;
+                    list-style: none;
+                    bottom: 0px;
+                    margin-bottom: 20px;
+                    > li {
+                        display: inline-flex;
+                        width: $dot-size;
+                        height: $dot-size;
+                        margin: 0px;
+                        &.slick-active {
+                            width: 16px;
+                            height: 16px;
+                            > .dot {
+                                border: 2px solid white;
+                                background: rgba(0, 0, 0, 0.2);
+                                border-radius: 8px;
+                            }
+                        }
+                    }
+                }
+                .dot {
+                    display: flex;
+                    background: rgba(255, 255, 255, 0.4);
+                    width: inherit;
+                    height: inherit;
+                    border-radius: calc($dot-size / 2);
+                }
+            }
+            > .bottom {
+                padding: 30px;
+                > .name {
+                    font: normal 20px "Raleway Medium";
+                    color: #555555;
+                    margin: 0px;
+                }
+            }
+            .desc {
+                font: normal 14px "Montserrat Light";
+                line-height: 22px;
+                color: #8C8C8C;
+            }
+            .read-more {
+                $color: #C7B299;
+                display: flex;
+                align-items: center;
+                border: none;
+                background: none;
+                padding: 0px;
+                color: $color;
+                font: normal 14px "Montserrat Light";
+                text-transform: capitalize;
+                margin-top: 20px !important;
+                > .icon {
+                    fill: $color;
+                    margin-left: 8px;
+                }
+            }
+        }
+        .arrows {
+            display: flex;
+            justify-content: center;
+            column-gap: 7px;
+            margin-top: 39px;
+            > .arrow {
+                display: inline-flex;
+                padding: 0px;
+                border: none;
+                background: none;
+                &.active {
+                    cursor: pointer;
+                    > .icon {
+                        fill: #C7B299;
+                    }
+                }
+                > .icon {
+                    fill: #D1D1D1;
+                }
+            }
+        }
+    }
+}

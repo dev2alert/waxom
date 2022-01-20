@@ -4,6 +4,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        column-gap: 10px;
         padding: 49px 30px;
+    }
+    @media (max-width: 800px) {
+        > :global(.container) {
+            padding: 34px 21px;
+        }
     }
 }

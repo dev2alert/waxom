@@ -1,6 +1,5 @@
 .main {
     width: 100%;
-    min-width: 1100px;
     > :global(.container) {
         width: var(--width, 1100px);
         margin: auto;
@@ -53,7 +52,7 @@
             &.type-3 {
                 color: var(--color, #615855);
                 font: normal var(--size, 18px) "Montserrat Light";
-                line-height: var(--line, 32px);
+                line-height: var(--line, 1.77);
             }
         }
         .button {
@@ -71,7 +70,8 @@
             > .list {
                 display: flex;
                 justify-content: center;
-                column-gap: 9px;
+                flex-wrap: wrap;
+                gap: 9px;
                 > .item {
                     background: white;
                     border: 1px solid #EBEBEB;
@@ -117,6 +117,54 @@
                     content: url("./assets/list-arrow.png");
                 }
             }
+        }
+        @media (max-width: 800px) {
+            .subtitle {
+                font-size: 18px;
+            }
+            .title {
+                &.type-1 {
+                    font-size: 22px;
+                    line-height: 2;
+                }
+                &.type-2 {
+                    font-size: 19px;
+                    line-height: 1.2;
+                }
+                &.type-3 {
+                    font-size: 20px;
+                }
+            }
+            .paragraph {
+                width: auto;
+                &.type-1 {
+                    font-size: 14px;
+                    width: 80%;
+                }
+                &.type-2 {
+                    font-size: 13px;
+                    line-height: 1.4; 
+                }
+                &.type-3 {
+                    font-size: 14px;
+                }
+            }
+            .button {
+                padding: 14px 27px;
+            }
+            .tabs {
+                > .list {
+                    > .item {
+                        padding: 9px 20px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1100px) {
+        > :global(.container) {
+            width: 100%;
         }
     }
 }

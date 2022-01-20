@@ -6,6 +6,7 @@ export default function Partners(): React.ReactElement {
     return <Section 
         className={styles.main} 
         style={{"--background": "url(\"/test/partners-background.png\")"} as any}
+        container
     >
         <div className="partners">
             <a className="partner" href="#partner-1">

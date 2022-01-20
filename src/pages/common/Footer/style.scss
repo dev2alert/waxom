@@ -1,0 +1,173 @@
+.main {
+    min-width: 1100px;
+    > :global(.top) {
+        background: #191919;
+    }
+    > :global(.top > .container) {
+        max-width: 1100px;
+        margin: auto;
+        padding: 80px 30px;
+    }
+    > :global(.bottom) {
+        background: #111111;
+    }
+    :global(.bottom > .container) {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: auto;
+        padding: 0px 30px;
+        padding-top: 46px;
+        padding-bottom: 52px;
+        color: #555555;
+        font: normal 13px "Montserrat Light";
+    }
+    :global(.bottom > .container .link) {
+        font-size: 13px;
+    }
+    :global {
+        .columns {
+            display: flex;
+            column-gap: 40px;
+        }
+        .column {
+            > .name {
+                font: normal 24px "Raleway Medium";
+                color: white;
+                margin-bottom: 33px;
+            }
+        }
+        #column-1 {
+            width: 80%;
+            > .paragraph {
+                margin-top: 24px;
+            }
+            > .read-more {
+                margin-top: 18px;
+            }
+        }
+        .logo {
+            display: inline-flex;
+            width: 182px;
+            height: 57px;
+            fill: white;
+            &:hover {
+                fill: #C7B299;
+            }
+            > text {
+                font: normal 34px "Raleway Regular";
+            }
+        }
+        .paragraph {
+            font: normal 14px "Montserrat Light";
+            color: #555555;
+            line-height: 2;
+        }
+        .read-more {
+            $color: #D1D1D1;
+            background: none;
+            border: none;
+            padding: 0px;
+            color: $color;
+            font: normal 14px "Raleway Regular";
+            cursor: pointer;
+            &:hover {
+                color: #C7B299;
+                > .arrow {
+                    fill: #C7B299;
+                }
+            }
+            > .arrow {
+                margin-left: 10px;
+                fill: $color;
+            }
+        }
+        .date {
+            display: inline-flex;
+            color: #363636;
+            font: normal 13px "Montserrat Light"; 
+        }
+        .link {
+            color: #00BFF3;
+            text-decoration: none;
+            font: normal 14px "Montserrat Light";
+            &:hover {
+                text-decoration: underline;
+            }
+            &.view-2 {
+                color: #aaa9a9;
+            }
+            &.view-3 {
+                color: #555555;
+                &:hover {
+                    text-decoration: none;
+                    color: #C7B299;
+                }
+            }
+            &.view-4 {
+                color: #959595;
+                &:hover {
+                    text-decoration: none;
+                    color: #C7B299;
+                }
+            }
+        }
+        .posts {
+            > .post {
+                border-bottom: 1px solid #252525;
+                padding-bottom: 18px;
+                cursor: pointer;
+                &:hover {
+                    > .date {
+                        color: white;
+                    }
+                    > .paragraph {
+                        color: #C7B299;
+                    }
+                }
+                &:last-child {
+                    border: none;
+                }
+                &:not(:first-child) {
+                    margin-top: 18px;
+                }
+                > .paragraph {
+                    line-height: 1.5;
+                    margin-bottom: 0px;
+                    &:last-child {
+                        margin-top: 6px;
+                    }
+                }
+                > .date {
+                    &:last-child {
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+        .widgets {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            > .widget {
+                cursor: pointer;
+                &:hover {
+                    > .photo > .image {
+                        transform: scale(1.12);
+                    }
+                }
+                > .photo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 133px;
+                    height: 100px; 
+                    overflow: hidden;
+                    > .image {
+                        transition: transform 0.575s ease;
+                    }
+                }
+            }
+        }
+    }
+}

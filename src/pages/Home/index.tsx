@@ -9,6 +9,7 @@ import Services from "./Services";
 import Theme from "./Theme";
 import TopSlider from "./TopSlider";
 import VideoPresentation from "./VideoPresentation";
+import RecentPosts from "./RecentPosts";
 
 export default function Home(): React.ReactElement {
     return <Page title="Home">
@@ -20,6 +21,7 @@ export default function Home(): React.ReactElement {
         <VideoPresentation />
         <Mobile />
         <Counters />
+        <RecentPosts />
         <Partners />
     </Page>;
 }

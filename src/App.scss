@@ -38,6 +38,13 @@
     src: url("./fonts/Roboto-Regular.ttf");
 }
 
-* {
-    box-sizing: border-box;
+:global {
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        &.fixed {
+            overflow: hidden;
+        }
+    }
 }

@@ -5,6 +5,7 @@
     background: var(--background-image);
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgba(54, 47, 45, 0.65);
+    padding: 0px 15px;
     :global {
         $arrow-width: 41px;
         .slick-slider {
@@ -81,6 +82,19 @@
                     background: white;
                     opacity: 0.5;
                     border-radius: calc($size / 2);
+                }
+            }
+        }
+    }
+    @media (max-width: 800px) {
+        height: calc($section-height / 1.2);
+        :global {
+            .slick-slider {
+                height: calc($view-height / 1.2);
+            }
+            .slick-list {
+                .view {
+                    height: calc($view-height / 1.2);
                 }
             }
         }

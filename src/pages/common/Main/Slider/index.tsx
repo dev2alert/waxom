@@ -36,9 +36,7 @@ export default class Slider extends React.Component<SliderProps> {
             <SlickSlider
                 ref={this.ref} 
                 dots
-                customPaging={() => {
-                    return <span className="dot" />;
-                }}
+                customPaging={() => <span className="dot" />}
                 nextArrow={<>
                     <button 
                         className="arrow next"
@@ -52,7 +50,7 @@ export default class Slider extends React.Component<SliderProps> {
                     />
                 </>}
                 initialSlide={1}
-                autoplay={true}
+                autoplay
                 autoplaySpeed={3000}
             >
                 {children}

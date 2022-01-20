@@ -31,4 +31,25 @@
             }
         }
     }
+    @media (max-width: 1100px) {
+        padding: 0px 10px;
+        padding-top: 60px;
+        :global {
+            .paragraph {
+                margin-top: 18px !important;
+            }
+            .browser {
+                margin-top: 12%;
+                > .image {
+                    --width: calc(100vw / 2);
+                    width: var(--width);
+                    height: calc(var(--width) * 0.5);
+                    &.center {
+                        height: calc(var(--width) * 0.62);
+                        margin-left: calc(var(--width) / 2);
+                    }
+                }
+            }
+        }       
+    }
 }

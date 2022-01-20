@@ -10,23 +10,74 @@
         align-items: center;
         width: 1100px;
         margin: auto;
+        padding: 0px 30px;
     }
     > :global(.container > .right) {
         display: flex;
     }
     :global {
+        .menu-background {
+            display: none;
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            background: rgba(54, 47, 45, 0.2);
+        }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            row-gap: 5px;
+            padding: 0px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+            width: 63px;
+            position: relative;
+            &:hover {
+                > .line {
+                    fill: #C7B299;
+                }
+            }
+            &.close {
+                width: 53px;
+                height: 53px;
+                > .line {
+                    fill: white;
+                }
+                #line-1 {
+                    transform: rotateZ(45deg);
+                    transform-origin: left;
+                }
+                #line-2 {
+                    transform: translate(-10px, 8px);
+                    opacity: 0;
+                }
+                #line-3 {
+                    transform: rotateZ(-45deg) translate(-10px, 10px);
+                    transform-origin: left;
+                }
+            }
+            > .line {
+                fill: white;
+                transition: all 0.6s ease;
+            }
+        }
+        .menu {
+            display: flex;
+        }
         .logo {
             display: inline-flex;
             width: 182px;
             height: 57px;
             cursor: pointer;
+            fill: white;
+            position: relative; 
+            z-index: 2;
             &:hover {
-                * {
-                    fill: #C7B299;
-                }
-            }
-            > * {
-                fill: white;
+                fill: #C7B299;
             }
             > text {
                 font: normal 34px "Raleway Regular";
@@ -73,24 +124,91 @@
                 fill: white;
             }
         }
-        .search {
+        .search-button {
             display: inline-flex;
-            > .button {
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0px;
+            &:hover {
+                > .icon {
+                    fill: #C7B299;
+                }
+            }
+            > .icon {
+                width: 25px;
+                height: 26px;
+                fill: white;
+            }
+        }
+        @media (max-width: 1100px) {
+            .menu-toggle {
                 display: inline-flex;
-                align-items: center;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 0px;
-                &:hover {
-                    > .icon {
-                        fill: #C7B299;
+            }
+            .menu-background {
+                &.show {
+                    display: flex;
+                }
+            }
+            .menu {
+                display: grid;
+                grid-template-areas: "nav nav" "basket search";
+                grid-template-rows: 1fr;
+                align-items: flex-start;
+                row-gap: 30px;
+                position: fixed;
+                overflow: auto;
+                top: 0px;
+                right: -400px;
+                bottom: 0px;
+                width: 100%;
+                max-width: 400px;
+                background: rgba(199, 178, 153, 0.5);
+                opacity: 0;
+                transition: all 0.6s ease;
+                padding: 30px;
+                padding-top: 140px;
+                &.show {
+                    right: 0px;
+                    opacity: 1;
+                }
+                > .nav {
+                    grid-area: nav;
+                    flex-direction: column;
+                    row-gap: 8px;
+                    margin-right: 0px;
+                    > .link {
+                        background: white;
+                        color: #C7B299;
+                        padding: 12px 10px;
+                        border-radius: 8px;
+                        &.active {
+                            color: white;
+                            background: #C7B299;
+                        }
                     }
                 }
-                > .icon {
-                    width: 25px;
-                    height: 26px;
-                    fill: white;
+                > .button {
+                    display: inline-flex;
+                    justify-content: center;
+                    background: #C7B299;
+                    padding: 10px 0px;
+                    border-bottom: 3px solid #736357;
+                    border-radius: 4px;
+                    &.active {
+                        cursor: pointer;
+                    }
+                    > .icon {
+                        fill: white;
+                    }
+                }
+                > .basket {
+                    grid-area: basket;
+                    margin-right: 50px;
+                }
+                > .search-button {
+                    grid-area: search;
                 }
             }
         }

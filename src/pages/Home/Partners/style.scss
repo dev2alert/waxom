@@ -1,7 +1,6 @@
 .main {
     display: flex;
     align-items: center;
-    justify-content: center;
     background: var(--background);
     background-size: cover;
     background-position: center;
@@ -10,7 +9,7 @@
     :global {
         .partners {
             display: flex;
-            column-gap: 90px;
+            column-gap: 80px;
             align-items: center; 
         }
     }
