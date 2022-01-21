@@ -34,7 +34,12 @@ export default class RecentPosts extends React.Component {
     public handleSlideAfterChange(currentSlide: number): void {
         this.currentSlide = currentSlide;
         this.arrowPrevActive = currentSlide !== 0;
-        this.arrowNextActive = currentSlide !== this.getSlideCount() - 3;
+        let count: number = 3;
+        if(screen.width <= 1100)
+            count = 1;
+        else if(screen.width <= 750)
+            count = 0;
+        this.arrowNextActive = currentSlide !== this.getSlideCount() - count;
     }
 
     public handleSliderPrev(): void {
@@ -42,8 +47,6 @@ export default class RecentPosts extends React.Component {
     }
 
     public handleSliderNext(): void {
-        if(this.currentSlide === this.getSlideCount() - 3)
-            return;
         this.sliderRef.current?.slickNext();
     }
 

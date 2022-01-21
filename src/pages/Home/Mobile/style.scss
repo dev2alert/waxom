@@ -3,11 +3,12 @@
     > :global(.container) {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
         padding-top: 80px;
         column-gap: 30px;
     }
     > :global(.container > .right) {
-        padding-top: 112px;
+        padding-bottom: 112px;
     }
     :global {
         .photo {
@@ -20,6 +21,32 @@
         }
         .paragraph {
             margin-top: 34px;
+        }
+    }
+    @media (max-width: 980px) {
+        > :global(.container) {
+            padding-top: 50px;
+        }
+        > :global(.container > .right) {
+            padding-bottom: 40px;
+        }
+        :global {
+            .photo {
+                width: 300px;
+                height: 436px;
+            }
+            .paragraph {
+                margin-top: 24px;
+            }
+        }
+    }
+    @media (max-width: 900px) {
+        > :global(.container) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        > :global(.container > .right) {
+            padding: 0px 20px;
         }
     }
 }

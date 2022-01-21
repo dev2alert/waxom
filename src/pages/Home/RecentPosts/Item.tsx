@@ -23,6 +23,7 @@ export function PhotoSlider({list}: PhotoSlider): React.ReactElement {
         autoplay
         autoplaySpeed={2000}
         touchMove={false}
+        arrows={false}
     >
         {list.map((url, index) => <Photo key={index} url={url} />)}
     </Slider>;

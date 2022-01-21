@@ -14,6 +14,20 @@ export default function List({sliderRef, onAfterChange}: ListProps): React.React
         slidesToShow={3}
         infinite={false}
         afterChange={onAfterChange}
+        responsive={[
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 750,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]}
     >
         <Item 
             photos={["/test/post-photo-1.png", "/test/post-photo-2.png", "/test/post-photo-3.png", "/test/post-photo-2.png", "/test/post-photo-3.png"]} 

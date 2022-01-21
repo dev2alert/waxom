@@ -11,7 +11,7 @@
     > :global(.bottom) {
         background: #111111;
     }
-    :global(.bottom > .container) {
+    > :global(.bottom > .container) {
         display: flex;
         justify-content: space-between;
         max-width: 1100px;
@@ -22,7 +22,7 @@
         color: #555555;
         font: normal 13px "Montserrat Light";
     }
-    :global(.bottom > .container .link) {
+    > :global(.bottom > .container .link) {
         font-size: 13px;
     }
     :global {
@@ -169,5 +169,10 @@
                 }
             }
         }
+    }
+    @media (max-width: 1100px) {
+        min-width: auto;
+        width: 100%;
+        overflow: hidden;
     }
 }

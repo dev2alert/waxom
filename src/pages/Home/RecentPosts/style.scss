@@ -13,6 +13,7 @@
             border: 1px solid #ebebeb;
             position: relative;
             cursor: pointer;
+            margin: auto;
             &:hover {
                 .photo {
                     box-shadow: inset 0px 0px 0px 11110px rgba(54, 47, 45, 0.4);
@@ -107,6 +108,7 @@
             }
             > .bottom {
                 padding: 30px;
+                background: white;
                 > .name {
                     font: normal 20px "Raleway Medium";
                     color: #555555;
@@ -153,6 +155,28 @@
                 }
                 > .icon {
                     fill: #D1D1D1;
+                }
+            }
+        }
+    }
+    @media (max-width: 800px) {
+        > :global(.container > .paragraph) {
+            margin-top: 18px !important;
+            margin-bottom: 34px !important;
+        }
+        :global {
+            padding: 50px 10px;
+            .post {
+                > .bottom {
+                    > .name {
+                        font-size: 17px;
+                    }
+                }
+                .desc {
+                    font-size: 13px;
+                }
+                .read-more {
+                    font-size: 13px;
                 }
             }
         }

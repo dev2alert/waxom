@@ -13,4 +13,13 @@
             align-items: center; 
         }
     }
+    @media (max-width: 1100px) {
+        :global {
+            .partner {
+                > .logo {
+                    width: 80%;
+                }
+            }
+        }
+    }
 }
