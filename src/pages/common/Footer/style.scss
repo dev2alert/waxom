@@ -28,7 +28,9 @@
     :global {
         .columns {
             display: flex;
-            column-gap: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
         .column {
             > .name {
@@ -38,7 +40,6 @@
             }
         }
         #column-1 {
-            width: 80%;
             > .paragraph {
                 margin-top: 24px;
             }
@@ -51,8 +52,10 @@
             width: 182px;
             height: 57px;
             fill: white;
-            &:hover {
-                fill: #C7B299;
+            @media (pointer: fine) {
+                &:hover {
+                    fill: #C7B299;
+                }
             }
             > text {
                 font: normal 34px "Raleway Regular";
@@ -62,6 +65,7 @@
             font: normal 14px "Montserrat Light";
             color: #555555;
             line-height: 2;
+            max-width: 224px;
         }
         .read-more {
             $color: #D1D1D1;
@@ -147,7 +151,7 @@
         }
         .widgets {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 133px);
             gap: 10px;
             > .widget {
                 cursor: pointer;
@@ -174,5 +178,27 @@
         min-width: auto;
         width: 100%;
         overflow: hidden;
+    }
+    @media (max-width: 890px) {
+        > :global(.bottom > .container) {
+            flex-direction: column;
+            row-gap: 15px;
+            align-items: center;
+        }
+    }
+    @media (max-width: 600px) {
+        :global {
+            .column {
+                width: 90%;
+                .paragraph {
+                    max-width: max-content;
+                }
+            }
+        }
+    }
+    @media (max-width: 500px) {
+        > :global(.bottom > .container) {
+            align-items: flex-start;
+        }
     }
 }

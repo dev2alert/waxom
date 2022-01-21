@@ -14,6 +14,7 @@ export default function List({sliderRef, onAfterChange}: ListProps): React.React
         slidesToShow={3}
         infinite={false}
         afterChange={onAfterChange}
+        arrows={false}
         responsive={[
             {
                 breakpoint: 1100,

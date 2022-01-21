@@ -23,6 +23,22 @@ export default class RecentPosts extends React.Component {
         });
     }
 
+    public getCount(): number {
+        if(screen.width <= 1100 && screen.width > 750)
+            return 2;
+        else if(screen.width <= 750)
+            return 1;
+        else return 3;
+    }
+
+    public isStart(currentSlide: number): boolean {
+        return currentSlide === 0;
+    }
+
+    public isEnd(currentSlide: number): boolean {
+        return currentSlide === this.getSlideCount() - this.getCount();
+    }
+
     public getSlideCount(): number {
         return (this.sliderRef.current as any)?.innerSlider.state.slideCount;
     }
@@ -33,13 +49,8 @@ export default class RecentPosts extends React.Component {
 
     public handleSlideAfterChange(currentSlide: number): void {
         this.currentSlide = currentSlide;
-        this.arrowPrevActive = currentSlide !== 0;
-        let count: number = 3;
-        if(screen.width <= 1100)
-            count = 1;
-        else if(screen.width <= 750)
-            count = 0;
-        this.arrowNextActive = currentSlide !== this.getSlideCount() - count;
+        this.arrowPrevActive = !this.isStart(currentSlide);
+        this.arrowNextActive = !this.isEnd(currentSlide);
     }
 
     public handleSliderPrev(): void {
@@ -47,6 +58,8 @@ export default class RecentPosts extends React.Component {
     }
 
     public handleSliderNext(): void {
+        if(this.isEnd(this.getCurrentSlide()))
+            return;
         this.sliderRef.current?.slickNext();
     }
 

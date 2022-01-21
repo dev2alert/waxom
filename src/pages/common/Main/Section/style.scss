@@ -65,6 +65,9 @@
             cursor: pointer;
             border-radius: 4px;
             border-bottom: 3px solid #736357;
+            &.press {
+                transform: translateY(2px);
+            }
         }
         .tabs {
             > .list {

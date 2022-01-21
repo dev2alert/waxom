@@ -36,9 +36,11 @@
             z-index: 2;
             width: 63px;
             position: relative;
-            &:hover {
-                > .line {
-                    fill: #C7B299;
+            @media (pointer: fine) {
+                &:hover {
+                    > .line {
+                        fill: #C7B299;
+                    }
                 }
             }
             &.close {
@@ -76,8 +78,10 @@
             fill: white;
             position: relative; 
             z-index: 2;
-            &:hover {
-                fill: #C7B299;
+            @media (pointer: fine) {
+                &:hover {
+                    fill: #C7B299;
+                }
             }
             > text {
                 font: normal 34px "Raleway Regular";

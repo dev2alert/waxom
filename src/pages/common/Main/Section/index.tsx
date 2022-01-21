@@ -8,6 +8,7 @@ export * from "./Button";
 export * from "./Tabs";
 export * from "./Flex";
 export * from "./List";
+export * from "./NewLine";
 
 export interface SectionProps {
     container?: boolean;
